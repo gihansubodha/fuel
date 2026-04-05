@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fuel Availability Tracker</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="container">
+    <header class="hero">
+        <h1>Fuel Availability Tracker</h1>
+        <p>Search stations by city, view them on the map, and report petrol or diesel availability.</p>
+    </header>
+
+    <section class="card">
+        <h2>Search Stations</h2>
+        <div class="search-row">
+            <input type="text" id="cityInput" placeholder="Enter city name (e.g. Colombo)">
+            <button id="searchBtn">Search</button>
+            <button id="loadAllBtn" class="secondary">Load All</button>
+            <button id="useLocationBtn" class="location-btn">Use My Location</button>
+        </div>
+    </section>
+
+    <section class="card">
+        <h2>Filters</h2>
+        <div class="filter-grid">
+            <label class="checkbox-row">
+                <input type="checkbox" id="petrolAvailableOnly">
+                Petrol available only
+            </label>
+
+            <label class="checkbox-row">
+                <input type="checkbox" id="dieselAvailableOnly">
+                Diesel available only
+            </label>
+
+            <label class="checkbox-row">
+                <input type="checkbox" id="anyFuelAvailableOnly">
+                Any fuel available
+            </label>
+
+            <label for="freshnessFilter">Freshness</label>
+            <select id="freshnessFilter">
+                <option value="">Any time</option>
+                <option value="30">Updated within 30 min</option>
+                <option value="120">Updated within 2 hours</option>
+                <option value="360">Updated within 6 hours</option>
+            </select>
+
+            <div>
+                <button id="applyFiltersBtn">Apply Filters</button>
+            </div>
+
+            <div>
+                <button id="clearFiltersBtn" class="secondary">Clear Filters</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="card">
+        <h2>Reporter Name</h2>
+        <div class="search-row">
+            <input type="text" id="reportedBy" placeholder="Enter your name">
+        </div>
+        <p id="message" class="message"></p>
+    </section>
+
+    <section class="card">
+        <h2>Map</h2>
+        <div id="map"></div>
+    </section>
+
+    <section class="card">
+        <h2>Stations</h2>
+        <div id="results" class="results"></div>
+    </section>
+</div>
+
+<script src="/app.js"></script>
+<script async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_q-pA2AvHeefAx7NHMLM3iws6o6tN2gE&loading=async&callback=initMap&v=weekly">
+</script>
+</body>
+</html>

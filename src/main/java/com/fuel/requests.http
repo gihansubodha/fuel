@@ -1,0 +1,33 @@
+### Get all stations
+GET http://localhost:8080/api/stations
+
+### Get stations by city
+GET http://localhost:8080/api/stations?city=Colombo
+
+### Create petrol report
+POST http://localhost:8080/api/reports
+Content-Type: application/json
+
+{
+  "stationId": 1,
+  "fuelType": "PETROL",
+  "status": "AVAILABLE",
+  "reportedBy": "Gihan"
+}
+
+### Import real stations from Google Places for Colombo
+POST http://localhost:8080/api/admin/import/stations?city=Colombo
+
+### Create diesel report
+POST http://localhost:8080/api/reports
+Content-Type: application/json
+
+{
+  "stationId": 2,
+  "fuelType": "DIESEL",
+  "status": "AVAILABLE",
+  "reportedBy": "Tester"
+}
+
+### Get reports for station 1
+GET http://localhost:8080/api/reports/station/1
